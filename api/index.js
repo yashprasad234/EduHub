@@ -20,7 +20,7 @@ mongoose.connect(MONGO_URI, {
 });
 
 app.get("/", (req, res) => {
-  res.send("Server is running");
+  res.send("Server is running, check again");
 });
 
 app.listen(PORT, () => {
