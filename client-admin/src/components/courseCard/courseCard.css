@@ -1,0 +1,36 @@
+.courseCard {
+  display: flex;
+  padding: 5px 0 5px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75) !important;
+}
+
+.courseImg {
+  height: 150px;
+  width: 270px;
+  object-fit: fill;
+  border: none;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.courseDetails {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.editIcon {
+  background-color: #fff;
+  padding: 3px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75) !important;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5px;
+  left: 245px;
+  cursor: pointer;
+}
