@@ -5,7 +5,7 @@ const SECRET = process.env.AUTH_SECRET;
 const User = require("../models/User.js");
 const Course = require("../models/Course.js");
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 const router = express.Router();
@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: hashedPassword,
-    })
+    });
     await newUser.save();
     res.json({ msg: "User created successfully" });
   }
@@ -41,8 +41,11 @@ router.post("/login", async (req, res) => {
   const user = await User.findOne({
     email: req.headers.email,
   });
-  const validPassword = await bcrypt.compare(req.headers.password, admin.password);
-  if (user && validPassword ) {
+  const validPassword = await bcrypt.compare(
+    req.headers.password,
+    user.password
+  );
+  if (user && validPassword) {
     const token = jwt.sign({ userId: user._id, role: "user" }, SECRET);
     res.json({ msg: "Logged in successfully", token });
   } else {
