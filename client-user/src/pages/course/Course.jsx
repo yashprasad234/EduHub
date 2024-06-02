@@ -2,13 +2,14 @@ import "./course.css";
 import CourseCard from "../../components/courseCard/CourseCard";
 import { Button } from "@mui/material/";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function Courses() {
   const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
   const { courseId } = useParams();
   const [course, setCourse] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("user-token");
