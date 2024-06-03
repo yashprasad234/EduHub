@@ -5,12 +5,15 @@ import Login from "./pages/login/Login";
 import Courses from "./pages/courses/Courses";
 import Course from "./pages/course/Course";
 import PurchasedCourses from "./pages/purchasedCourses/PurchasedCourses";
+import Navbar from "./components/navbar/Navbar";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route path={"/"} element={<Login />} />
+        <Route path={"/"} element={<Home />} />
         <Route path={"/signup"} element={<Register />} />
         <Route path={"/login"} element={<Login />} />
         <Route path={"/courses"} element={<Courses />} />

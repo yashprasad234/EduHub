@@ -5,8 +5,8 @@ export default function Navbar() {
 
   return (
     // Mobile view
-    <div className="flex flex-col px-5 bg-yellow-50 text-slate-800">
-      <div className="flex items-center justify-between px-2">
+    <div className="flex flex-col bg-yellow-50 text-slate-800">
+      <div className="flex items-center justify-between px-6 pt-4">
         <div className="flex justify-between">
           <img src="" alt="" />
           <h4 className="text-3xl">EduHub</h4>
@@ -65,7 +65,7 @@ export default function Navbar() {
       </div>
       {menuMode ? (
         <div>
-          <ul className="flex flex-col items-start ml-2 gap-2.5 py-2">
+          <ul className="flex flex-col items-start ml-6 gap-2.5 py-2">
             <li className="cursor-pointer border-b border-slate-800 border-double">
               Signup
             </li>
