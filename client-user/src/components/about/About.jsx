@@ -3,12 +3,12 @@ import AboutCard from "./aboutCard/AboutCard";
 
 export default function About() {
   return (
-    <div className="container ml-5 mb-8">
+    <div className="container px-5 mx-auto">
       <h3 className="text-3xl text-center mb-8">
         Undeniable quality in every course
       </h3>
       <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <AboutCard
             icon={
               <svg
@@ -31,7 +31,7 @@ export default function About() {
             }
           />
         </div>
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <AboutCard
             icon={
               <svg
@@ -54,7 +54,7 @@ export default function About() {
             }
           />
         </div>
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <AboutCard
             icon={
               <svg
@@ -77,7 +77,7 @@ export default function About() {
             }
           />
         </div>
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <AboutCard
             icon={
               <svg
@@ -100,7 +100,7 @@ export default function About() {
             }
           />
         </div>
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <AboutCard
             icon={
               <svg
@@ -123,7 +123,7 @@ export default function About() {
             }
           />
         </div>
-        <div className="col-span-4">
+        <div className="col-span-12 lg:col-span-4">
           <AboutCard
             icon={
               <svg

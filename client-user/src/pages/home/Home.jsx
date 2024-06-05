@@ -1,11 +1,23 @@
 import About from "../../components/about/About";
+import Courses from "../../components/courses/Courses";
+import Footer from "../../components/footer/Footer";
 import Landing from "../../components/landing/Landing";
+import Testimonial from "../../components/testimonial/Testimonial";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-6">
       <Landing />
       <About />
+      <img
+        src="./images/blob.svg"
+        height={200}
+        width={200}
+        className="-ml-24 -mt-6 z-0"
+      />
+      {/* <Testimonial /> */}
+      <Courses />
+      <Footer />
     </div>
   );
 }
