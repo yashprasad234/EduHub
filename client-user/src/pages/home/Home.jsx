@@ -1,8 +1,8 @@
-import About from "../../components/about/About";
+import About from "./about/About";
 import Courses from "../../components/courses/Courses";
-import Footer from "../../components/footer/Footer";
-import Landing from "../../components/landing/Landing";
-import Testimonial from "../../components/testimonial/Testimonial";
+import Footer from "./footer/Footer";
+import Landing from "./landing/Landing";
+import Testimonial from "./testimonial/Testimonial";
 
 export default function Home() {
   return (
