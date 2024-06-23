@@ -9,12 +9,6 @@ export default function Home() {
     <div className="flex flex-col gap-6">
       <Landing />
       <About />
-      <img
-        src="./images/blob.svg"
-        height={200}
-        width={200}
-        className="-ml-24 -mt-6 z-0"
-      />
       {/* <Testimonial /> */}
       <Courses />
       <Footer />
