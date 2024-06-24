@@ -1,5 +1,5 @@
 import "./courses.css";
-import CourseCard from "../../components/courseCard/CourseCard";
+// import CourseCard from "../../components/courseCard/CourseCard";
 import { Grid } from "@mui/material/";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
