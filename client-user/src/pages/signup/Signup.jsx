@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-export default function Signup2() {
+export default function Signup() {
   const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
   const navigate = useNavigate();
 

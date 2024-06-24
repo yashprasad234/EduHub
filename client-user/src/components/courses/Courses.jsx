@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard2 from "../courseCard/CourseCard2";
+import CourseCard from "../courseCard/CourseCard";
 
 export default function Courses() {
   return (

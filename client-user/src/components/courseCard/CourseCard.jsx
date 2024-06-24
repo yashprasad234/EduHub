@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CourseCard2({
+export default function CourseCard({
   icon,
   title,
   desc,
