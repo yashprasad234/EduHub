@@ -10,6 +10,7 @@ import Home from "./pages/home/Home";
 import Signup2 from "./pages/signup/Signup2";
 import Courses2 from "./pages/courses2/Courses2";
 import Course2 from "./pages/course2/Course2";
+import PurchasedCourses2 from "./pages/purchasedCourses2/PurchasedCourses2";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         {/* <Route path={"/courses"} element={<Courses />} /> */}
         <Route path={"/courses2"} element={<Courses2 />} />
         <Route path={"/courses/:courseId"} element={<Course2 />} />
-        {/* <Route path={"/purchasedCourses"} element={<PurchasedCourses />} /> */}
+        <Route path={"/purchasedCourses"} element={<PurchasedCourses2 />} />
       </Routes>
     </Router>
   );
