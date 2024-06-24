@@ -18,10 +18,20 @@ export default function Landing() {
               </div>
             </div>
             <div className="w-3/5 flex justify-between mt-6">
-              <button className="w-2/5 p-3 border-2 border-slate-800 rounded-lg text-sm hover:bg-slate-800 hover:text-yellow-50" onClick={() => {navigate("/signup2")}} >
+              <button
+                className="w-2/5 p-3 border-2 border-slate-800 rounded-lg text-sm hover:bg-slate-800 hover:text-yellow-50"
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
                 Signup
               </button>
-              <button className="w-2/5 p-3 border-2 border-slate-800 rounded-lg text-sm hover:bg-slate-800 hover:text-yellow-50" onClick={() => {navigate("/login2")}} >
+              <button
+                className="w-2/5 p-3 border-2 border-slate-800 rounded-lg text-sm hover:bg-slate-800 hover:text-yellow-50"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
                 Signin
               </button>
             </div>

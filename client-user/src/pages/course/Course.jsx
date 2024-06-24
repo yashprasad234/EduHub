@@ -4,7 +4,7 @@ const course = {
   description:
     "Learn the basics of JavaScript, the most popular programming language for web development. This course covers variables, functions, and basic DOM manipulation to build interactive websites. Perfect for beginners looking to start their coding journey.",
   instructor: "John Doe",
-  duration: "4 weeks",
+  duration: 20,
   price: 99.99,
   imgURL: "https://picsum.photos/600/400",
 };
@@ -69,11 +69,5 @@ export default function Course() {
         </div>
       </div>
     </div>
-  );
-}
-
-function BuyCard() {
-  return (
-    <div className="absolute w-1/8 background-white h-96 z-20 t-0 r-0 border-2 border-red-800"></div>
   );
 }

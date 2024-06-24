@@ -102,9 +102,3 @@ export default function CourseCard({
     </div>
   );
 }
-
-{
-  /* <div>
-        <img src={imgURL} alt="" />
-      </div> */
-}
