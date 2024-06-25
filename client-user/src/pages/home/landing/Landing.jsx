@@ -40,9 +40,8 @@ export default function Landing() {
       <div className="col-span-2"></div>
       <div className="col-span-12 lg:col-span-4 w-full h-full">
         <img
-          src="https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3BpZGVybWFufGVufDB8fDB8fHww"
-          alt="landing-img"
-          className="my-5 h-full aspect-square rounded-3xl"
+          src="https://app.rigi.club/wp-content/uploads/2022/09/How-create-and-sell-online-courses-for-free.png"
+          className="my-5 h-full aspect-video rounded-3xl object-cover"
         />
       </div>
     </div>
