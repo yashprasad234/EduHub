@@ -7,6 +7,7 @@ import Signup from "./pages/signup/Signup";
 import Courses from "./pages/courses/Courses";
 import Course from "./pages/course/Course";
 import PurchasedCourses from "./pages/purchasedCourses/PurchasedCourses";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path={"/courses/:courseId"} element={<Course />} />
         <Route path={"/purchasedCourses"} element={<PurchasedCourses />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
