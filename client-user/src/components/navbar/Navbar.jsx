@@ -25,7 +25,7 @@ export default function Navbar() {
             <li
               className="cursor-pointer border-b border-slate-800 border-double"
               onClick={() => {
-                navigate("/login");
+                navigate("/signin");
               }}
             >
               Signin
@@ -82,13 +82,28 @@ export default function Navbar() {
       {menuMode ? (
         <div>
           <ul className="flex flex-col items-start mx-6 gap-2.5 py-2">
-            <li className="cursor-pointer border-b border-slate-800 border-double">
+            <li
+              className="cursor-pointer border-b border-slate-800 border-double"
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
               Signup
             </li>
-            <li className="cursor-pointer border-b border-slate-800 border-double">
+            <li
+              className="cursor-pointer border-b border-slate-800 border-double"
+              onClick={() => {
+                navigate("/signin");
+              }}
+            >
               Signin
             </li>
-            <li className="cursor-pointer border-b border-slate-800 border-double">
+            <li
+              className="cursor-pointer border-b border-slate-800 border-double"
+              onClick={() => {
+                navigate("/courses");
+              }}
+            >
               Courses
             </li>
           </ul>

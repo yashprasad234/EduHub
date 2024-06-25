@@ -2,14 +2,23 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-export default function Login() {
+export default function Signin() {
   const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
   const navigate = useNavigate();
 
   return (
-    <div className="grid grid-cols-12 gap-2">
-      <div className="col-span-6"></div>
-      <div className="col-span-6 w-11/12 border border-black rounded-xl px-24 py-16 bg-white">
+    <div className="grid grid-cols-12 gap-2 p-4">
+      <div className="col-span-10 lg:col-span-6 p-4">
+        <div className="flex flex-col mt-28">
+          <p className="text-xl -mb-4">Sign in</p>
+          <h1 className="text-6xl font-bold font-title">WELCOME BACK</h1>
+          <p className="text-2xl -mt-4">
+            Sign back in to your account to access your courses and embody the
+            art of being human.
+          </p>
+        </div>
+      </div>
+      <div className="col-span-12 lg:col-span-6 w-11/12 border border-black rounded-xl px-4 lg:px-24 py-16 bg-white">
         <form>
           <h2 className="text-4xl">YOUR ACCOUNT</h2>
           <div className="flex flex-col my-8">
@@ -34,7 +43,7 @@ export default function Login() {
             type="submit"
             className="border border-slate-700 bg-inherit px-4 py-2"
           >
-            LOGIN
+            SIGNIN
           </button>
         </form>
         <hr className="w-full border border-slate-700 mt-8 mb-8" />
