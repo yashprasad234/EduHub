@@ -124,7 +124,7 @@ const courses = [
 
 export default function Courses() {
   return (
-    <div>
+    <div className="flex flex-col py-8 gap-8">
       {courses.map((course) => {
         return (
           <CourseCard
