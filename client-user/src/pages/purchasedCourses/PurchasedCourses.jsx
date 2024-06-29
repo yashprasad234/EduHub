@@ -124,7 +124,7 @@ const courses = [
 
 export default function PurchasedCourses() {
   return (
-    <div>
+    <div className="py-8">
       {courses.map((course) => {
         return (
           <CourseCard
