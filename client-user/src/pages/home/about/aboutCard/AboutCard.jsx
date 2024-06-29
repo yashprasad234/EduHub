@@ -1,5 +1,4 @@
-import React from "react";
-
+/* eslint-disable react/prop-types */
 export default function AboutCard({ icon, title, description }) {
   return (
     <div className="flex flex-col gap-4 border-2 border-slate-800 rounded-lg p-12">

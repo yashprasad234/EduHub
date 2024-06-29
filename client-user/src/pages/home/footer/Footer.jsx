@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Footer() {
   return (
     <div className="bg-slate-800 text-white flex flex-col gap-4 items-center md:items-stretch pb-8">

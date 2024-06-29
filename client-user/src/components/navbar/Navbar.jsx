@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
@@ -6,7 +6,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col sticky top-0 bg-white text-slate-800">
+    <div className="flex flex-col sticky top-0 bg-white text-slate-800 z-50">
       <div className="flex items-center justify-between px-6 pt-4">
         <div className="flex justify-between">
           <img src="" alt="" />
