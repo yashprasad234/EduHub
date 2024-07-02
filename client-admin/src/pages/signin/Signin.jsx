@@ -41,7 +41,7 @@ export default function Signin() {
           </div>
           <button
             type="submit"
-            className="border border-slate-700 bg-inherit px-4 py-2"
+            className="border border-slate-700 bg-inherit px-4 py-2 hover:bg-slate-800 hover:text-yellow-50"
           >
             SIGNIN
           </button>
@@ -49,7 +49,7 @@ export default function Signin() {
         <hr className="w-full border border-slate-700 mt-8 mb-8" />
         <div className="flex justify-between items-center">
           <p>DON'T HAVE AN ACCOUNT?</p>
-          <button className="border border-slate-700 px-4 py-2">SIGNUP</button>
+          <button className="border border-slate-700 px-4 py-2 hover:bg-slate-800 hover:text-yellow-50">SIGNUP</button>
         </div>
       </div>
     </div>

@@ -51,7 +51,7 @@ export default function Signup() {
           </div>
           <button
             type="submit"
-            className="border border-slate-700 bg-inherit px-4 py-2"
+            className="border border-slate-700 bg-inherit px-4 py-2 hover:bg-slate-800 hover:text-yellow-50"
           >
             SIGNUP
           </button>
@@ -59,7 +59,7 @@ export default function Signup() {
         <hr className="w-full border border-slate-700 mt-8 mb-8" />
         <div className="flex justify-between items-center">
           <p>ALREADY HAVE AN ACCOUNT?</p>
-          <button className="border border-slate-700 px-4 py-2">SIGNIN</button>
+          <button className="border border-slate-700 px-4 py-2 hover:bg-slate-800 hover:text-yellow-50">SIGNIN</button>
         </div>
       </div>
     </div>

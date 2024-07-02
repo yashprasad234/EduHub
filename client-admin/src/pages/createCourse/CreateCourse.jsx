@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./createCourse.css";
 import { Card, TextField, Button } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -34,72 +33,61 @@ export default function CreateCourse() {
   };
 
   return (
-    <div>
-      <Card
-        style={{
-          width: "400px",
-          padding: "20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.7rem",
-          marginTop: "40px",
-          marginLeft: "120px",
-        }}
-      >
-        <TextField
-          variant="outlined"
-          label="Course Title"
-          type="text"
-          name="title"
-          id="title"
-          value={course.title}
-          onChange={handleChange}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Description"
-          type="text"
-          name="desc"
-          id="desc"
-          value={course.desc}
-          onChange={handleChange}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Image URL"
-          type="text"
-          name="imgUrl"
-          id="imgUrl"
-          value={course.imgUrl}
-          onChange={handleChange}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Duration"
-          type="number"
-          name="duration"
-          id="duration"
-          value={course.duration}
-          onChange={handleChange}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Price"
-          type="Number"
-          name="price"
-          id="price"
-          value={course.price}
-          onChange={handleChange}
-          fullWidth={true}
-        />
-        <Button variant="contained" onClick={handleClick}>
-          Add course
-        </Button>
-      </Card>
-    </div>
+    <div className="col-span-12 lg:col-span-6 w-4/5 lg:w-1/2 md:w-3/4  border border-black rounded-xl px-4 lg:px-24 py-16 bg-white mx-auto my-12">
+        <form >
+          <h2 className="text-4xl">CREATE COURSE</h2>
+          <div className="flex flex-col my-8">
+            <label htmlFor="title">TITLE</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="TITLE OF YOUR COURSE"
+              className="bg-inherit border border-slate-700 h-12 px-4 text-sm "
+            />
+          </div>
+          <div className="flex flex-col my-8">
+            <label htmlFor="description">DESCRIPTION</label>
+            <input
+              type="text"
+              name="description"
+              placeholder="DESCRIPTION OF YOUR COURSE"
+              className="bg-inherit border border-slate-700 h-12 px-4 text-sm "
+            />
+          </div>
+          <div className="flex flex-col my-8">
+            <label htmlFor="imgUrl">IMAGE URL</label>
+            <input
+              type="text"
+              name="imgUrl"
+              placeholder="IMAGE URL FOR YOUR COURSE IMAGE"
+              className="bg-inherit border border-slate-700 h-12 px-4 text-sm "
+            />
+          </div>
+          <div className="flex flex-col my-8">
+            <label htmlFor="price">PRICE</label>
+            <input
+              type="number"
+              name="price"
+              placeholder="PRICE OF YOUR COURSE IN INR"
+              className="bg-inherit border border-slate-700 h-12 px-4 text-sm "
+            />
+          </div>
+          <div className="flex flex-col my-8">
+            <label htmlFor="duration">DURATION</label>
+            <input
+              type="number"
+              name="duration"
+              placeholder="DURATION OF THE COURSE IN WEEKS"
+              className="bg-inherit border border-slate-700 h-12 px-4 text-sm "
+            />
+          </div>
+          <button
+            type="submit"
+            className="border mx-auto w-full mt-4 text-xl border-slate-700 bg-inherit px-4 py-2 hover:bg-slate-800 hover:text-yellow-50"
+          >
+            CREATE COURSE
+          </button>
+        </form>
+      </div>
   );
 }
