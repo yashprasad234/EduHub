@@ -13,7 +13,7 @@ export default function EditCourse() {
   // const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
 
   return (
-    <div className="lg:h-max grid grid-cols-12 gap-4 p-8 ">
+    <div className="lg:h-max grid grid-cols-12 gap-4 p-8">
       <div className="col-span-10 lg:col-span-6 shadow-xl bg-white rounded-2xl">
         <form className="p-8">
           <h2 className="text-4xl">YOUR ACCOUNT</h2>
@@ -69,7 +69,7 @@ export default function EditCourse() {
           </button>
         </form>
       </div>
-      <div className="col-span-10 mx-auto lg:col-span-6 shadow-xl bg-white rounded-2xl p-4 flex flex-col justify-center h-max gap-4 w-11/12 mx-auto">
+      <div className="col-span-10 mx-auto my-auto lg:col-span-6 shadow-xl bg-white rounded-2xl p-4 flex flex-col justify-center h-max gap-4 w-10/12 mx-auto">
         <img
           src={course.imgURL}
           alt=""
@@ -77,7 +77,7 @@ export default function EditCourse() {
         />
         <div className="flex flex-col gap-2 ">
           <h1 className="text-2xl font-bold text-">{course.title}</h1>
-          <h3 className="text-xl text-">{course.description}</h3>
+          <h3 className="text-lg text-">{course.description}</h3>
           <div className="flex gap-2 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ export default function EditCourse() {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6"
+              className="size-4 lg:size-6"
             >
               <path
                 strokeLinecap="round"
@@ -93,7 +93,7 @@ export default function EditCourse() {
                 d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
-            <p className="text-xl ">{course.duration} Hours</p>
+            <p className="text-lg ">{course.duration} Hours</p>
           </div>
 
           <div className="flex gap-2 items-center">
@@ -111,7 +111,7 @@ export default function EditCourse() {
                 d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
-            <p className="text-xl text-">₹ {course.price}</p>
+            <p className="text-lg">₹ {course.price}</p>
           </div>
         </div>
       </div>
