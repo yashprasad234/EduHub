@@ -1,145 +1,74 @@
-import { useEffect, useState } from "react";
-import "./editCourse.css";
-import { useParams } from "react-router-dom";
-import { Button, Card, TextField, Typography } from "@mui/material";
-import axios from "axios";
-import CourseCard from "../../components/courseCard/CourseCard.jsx";
+const course = {
+  id: 1,
+  title: "Introduction to JavaScript",
+  description:
+    "Learn the basics of JavaScript, the most popular programming language for web development. This course covers variables, functions, and basic DOM manipulation to build interactive websites. Perfect for beginners looking to start their coding journey.",
+  instructor: "John Doe",
+  duration: 20,
+  price: 99.99,
+  imgURL: "https://picsum.photos/600/400",
+};
 
 export default function EditCourse() {
-  const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
-  const { courseId } = useParams();
-  const [course, setCourse] = useState({});
-  const [courseUpdate, setCourseUpdate] = useState(0);
-  const [title, setTitle] = useState("");
-  const [desc, setDesc] = useState("");
-  const [img, setImg] = useState("");
-  const [duration, setDuration] = useState("");
-  const [price, setPrice] = useState("");
-
-  useEffect(() => {
-    const fetchCourse = async () => {
-      try {
-        const res = await axios.get(
-          `${BACKEND_URL}api/admin/courses/${courseId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("admin-token")}`,
-            },
-          }
-        );
-        console.log(res.data.course);
-        setCourse(res.data.course);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchCourse();
-  }, [courseUpdate]);
-
-  console.log(course);
-
-  useEffect(() => {
-    setTitle(course.title || "");
-    setDesc(course.desc || "");
-    setImg(course.imgUrl || "");
-    setDuration(course.duration || "");
-    setPrice(course.price || "");
-  }, [course]);
-
-  const handleUpdate = async (e) => {
-    const res = await axios.put(
-      `${BACKEND_URL}api/admin/courses/${courseId}`,
-      {
-        title: title,
-        desc: desc,
-        price: price,
-        duration: duration,
-        imgUrl: img,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("admin-token")}`,
-        },
-      }
-    );
-    console.log(res.data.msg);
-    setCourseUpdate((p) => p + 1);
-  };
+  // const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
 
   return (
-    <div style={{ position: "relative" }}>
-      <div className="block">
-        <Typography variant="h1" style={{ color: "beige" }}>
-          {course.title}
-        </Typography>
-      </div>
-      <Card
-        style={{
-          width: "400px",
-          padding: "20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0.7rem",
-          marginTop: "40px",
-          marginLeft: "120px",
-        }}
-      >
-        <TextField
-          variant="outlined"
-          label="Course Title"
-          id="title"
-          value={title}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Description"
-          id="description"
-          value={desc}
-          onChange={(e) => {
-            setDesc(e.target.value);
-          }}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Image URL"
-          id="img"
-          value={img}
-          onChange={(e) => {
-            setImg(e.target.value);
-          }}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Duration"
-          id="duration"
-          value={duration}
-          onChange={(e) => {
-            setDuration(e.target.value);
-          }}
-          fullWidth={true}
-        />
-        <TextField
-          variant="outlined"
-          label="Price"
-          id="price"
-          value={price}
-          onChange={(e) => {
-            setPrice(e.target.value);
-          }}
-          fullWidth={true}
-        />
-        <Button variant="contained" onClick={handleUpdate}>
-          Update
-        </Button>
-      </Card>
-      <div style={{ position: "absolute", top: "100px", right: "150px" }}>
-        <CourseCard course={course} edit={false} />
+    <div className="h-min lg:h-screen">
+      <div className="w-full lg:h-96 bg-slate-700 px-8 py-12 relative flex flex-col lg:block">
+        <div className="flex flex-col gap-4 ml-16 w-3/4 justify-center lg:w-1/2 mr-8 text-white">
+          <h1 className="text-5xl font-bold">{course.title}</h1>
+          <p className="text-lg">{course.description}</p>
+          <div className="flex flex-col lg:flex-row gap-8 lg:items-center">
+            <p className="bg-yellow-600 text-sm py-1 px-2">BESTSELLER</p>
+            <p className="text-sm">⭐⭐⭐⭐⭐ (3,54,612 ratings)</p>
+            <p className="text-sm">4,25,34 students</p>
+          </div>
+          <h6 className="text-sm">Created by {course.instructor}</h6>
+          <div className="flex">
+            <p>
+              Last updated {`${new Date().getMonth() + 1}`.padStart(2, "0")}/
+              {new Date().getFullYear()}
+            </p>
+          </div>
+        </div>
+        <div className="lg:absolute lg:w-1/4 bg-white h-96 lg:z-20 p-0.5 rounded-md flex flex-col gap-2 lg:top-32 lg:right-12 shadow-md">
+          <img
+            src={course.imgURL}
+            alt=""
+            className="border border-slate-800 rounded-t-md"
+          />
+          <div className="flex items-center gap-4 px-4">
+            <p className="text-xl text-black">₹ {course.price}</p>
+            <p className="text-sm line-through text-gray-600">
+              ₹ {course.price * 5}
+            </p>
+            <p className="text-xl text-gray-700">80% off</p>
+          </div>
+          <div className="flex px-4 gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-6 text-red-600"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <p className="text-md text-red-600">
+              <span className="font-bold">23 hours</span> left at this price!
+            </p>
+          </div>
+          <div className="px-4">
+            <button className="border w-full border-slate-800 hover:bg-slate-800 hover:text-white rounded-md py-4">
+              BUY NOW
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
