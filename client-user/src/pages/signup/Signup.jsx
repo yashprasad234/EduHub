@@ -6,6 +6,28 @@ export default function Signup() {
   const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password == confirmPassword) {
+      try {
+        const res = await axios.post(`${BACKEND_URL}register`, {
+          email,
+          password,
+        });
+        console.log(res.data);
+        navigate("/signin");
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      console.log("password and confirm password don't match");
+    }
+  };
+
   return (
     <div className="grid grid-cols-12 gap-2 p-4">
       <div className="col-span-10 lg:col-span-6 p-4">
@@ -20,15 +42,18 @@ export default function Signup() {
         </div>
       </div>
       <div className="col-span-12 lg:col-span-6 w-11/12 border border-black rounded-xl px-4 lg:px-24 py-16 bg-white">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2 className="text-4xl">YOUR ACCOUNT</h2>
           <div className="flex flex-col my-8">
             <label htmlFor="email">EMAIL</label>
             <input
               type="email"
               name="email"
-              id=""
-              className="bg-inherit border border-slate-700 h-12"
+              className="bg-inherit border border-slate-700 h-12 p-4"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
           </div>
           <div className="flex flex-col my-8">
@@ -36,8 +61,11 @@ export default function Signup() {
             <input
               type="password"
               name="password"
-              id=""
-              className="bg-inherit border border-slate-700 h-12"
+              className="bg-inherit border border-slate-700 h-12 p-4"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
           </div>
           <div className="flex flex-col my-8">
@@ -45,8 +73,11 @@ export default function Signup() {
             <input
               type="password"
               name="confirmPassword"
-              id=""
-              className="bg-inherit border border-slate-700 h-12"
+              className="bg-inherit border border-slate-700 h-12 p-4"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+              }}
             />
           </div>
           <button
@@ -59,7 +90,14 @@ export default function Signup() {
         <hr className="w-full border border-slate-700 mt-8 mb-8" />
         <div className="flex justify-between items-center">
           <p>ALREADY HAVE AN ACCOUNT?</p>
-          <button className="border border-slate-700 px-4 py-2 hover:bg-slate-800 hover:text-yellow-50">SIGNIN</button>
+          <button
+            className="border border-slate-700 px-4 py-2 hover:bg-slate-800 hover:text-yellow-50"
+            onClick={() => {
+              navigate("/signin");
+            }}
+          >
+            SIGNIN
+          </button>
         </div>
       </div>
     </div>

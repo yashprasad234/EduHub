@@ -5,7 +5,7 @@ const CourseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  desc: {
+  description: {
     type: String,
     required: true,
     max: 130,

@@ -1,15 +1,9 @@
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 
-export default function CourseCard({
-  icon,
-  title,
-  desc,
-  instructor,
-  price,
-  duration,
-  imgURL,
-  buy,
-}) {
+export default function CourseCard({ icon, course, buy }) {
+  const navigate = useNavigate();
+
   return (
     <div className="container w-3/4 lg:w-1/2 mx-auto p-5 border-2 rounded-xl border-slate-800 mb-4">
       <div className="flex flex-col gap-4">
@@ -19,14 +13,14 @@ export default function CourseCard({
               <div className="bg-white border-2 border-slate-800 p-2 rounded-lg">
                 {icon}
               </div>
-              <h3 className="lg:text-2xl">{title}</h3>
+              <h3 className="lg:text-2xl">{course.title}</h3>
             </div>
-            <p className="text-sm">{desc}</p>
+            <p className="text-sm">{course.description}</p>
           </div>
-          {imgURL && (
+          {course.imgURL && (
             <div className="w-2/4">
               <img
-                src={imgURL}
+                src={course.imgURL}
                 className="w-fit h-fit rounded-md border border-slate-600"
               />
             </div>
@@ -51,7 +45,7 @@ export default function CourseCard({
                   />
                 </svg>
               </div>
-              <p className="text-sm">{instructor}</p>
+              <p className="text-sm">{course.instructor}</p>
             </div>
             <div className="flex items-center gap-3">
               <div>
@@ -70,7 +64,7 @@ export default function CourseCard({
                   />
                 </svg>
               </div>
-              <p className="text-sm">₹ {price}</p>
+              <p className="text-sm">₹ {course.price}</p>
             </div>
             <div className="flex items-center gap-3">
               <div>
@@ -89,11 +83,16 @@ export default function CourseCard({
                   />
                 </svg>
               </div>
-              <p className="text-sm">{duration} hours</p>
+              <p className="text-sm">{course.duration} hours</p>
             </div>
           </div>
           {buy && (
-            <button className="px-4 py-2 hover:bg-slate-800 hover:text-yellow-50 border border-slate-700 rounded-md text-sm">
+            <button
+              className="px-4 py-2 hover:bg-slate-800 hover:text-yellow-50 border border-slate-700 rounded-md text-sm"
+              onClick={() => {
+                navigate(`/courses/${course._id}`);
+              }}
+            >
               BUY COURSE
             </button>
           )}

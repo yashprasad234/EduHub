@@ -5,7 +5,7 @@ const SECRET = process.env.AUTH_SECRET;
 const Admin = require("../models/Admin.js");
 const Course = require("../models/Course.js");
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 const router = express.Router();
@@ -41,7 +41,10 @@ router.post("/login", async (req, res) => {
   const admin = await Admin.findOne({
     email: req.headers.email,
   });
-  const validPassword = await bcrypt.compare(req.headers.password, admin.password);
+  const validPassword = await bcrypt.compare(
+    req.headers.password,
+    admin.password
+  );
   if (admin && validPassword) {
     const token = jwt.sign({ userId: admin._id, role: "admin" }, SECRET);
     res.json({ msg: "Logged in successfully", token });
@@ -63,7 +66,7 @@ router.post("/courses", authenticateJwt, async (req, res) => {
   );
   const currentAdmin = await Admin.findById(currentAdminId);
   if (currentAdmin) {
-    const course = new Course({ ...req.body, instructor: currentAdmin._id });
+    const course = new Course({ ...req.body, instructor: currentAdmin.name });
     await course.save();
     res.json({ msg: "course create successfully" });
   } else {

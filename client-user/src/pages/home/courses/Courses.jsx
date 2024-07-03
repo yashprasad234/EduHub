@@ -1,5 +1,6 @@
 import CourseCard from "../../../components/courseCard/CourseCard";
 
+import { useNavigate } from "react-router-dom";
 const courses = [
   {
     id: 1,
@@ -34,6 +35,7 @@ const courses = [
 ];
 
 export default function Courses() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col justify-center gap-6">
       {courses.map((course) => {
@@ -54,15 +56,16 @@ export default function Courses() {
                 />
               </svg>
             }
-            title={course.title}
-            desc={course.description}
-            instructor={course.instructor}
-            price={course.price}
-            duration={course.duration}
+            course={course}
           />
         );
       })}
-      <button className="p-2 w-48 rounded-lg self-center mb-10 bg-amber-500 text-slate-800">
+      <button
+        className="p-2 w-48 rounded-lg self-center mb-10 bg-amber-500 text-slate-800"
+        onClick={() => {
+          navigate("/signin");
+        }}
+      >
         See all courses
       </button>
     </div>

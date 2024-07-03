@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="bg-slate-800 text-white flex flex-col gap-4 items-center md:items-stretch pb-8">
+    <div className="bg-slate-800 text-white flex flex-col gap-4 items-center md:items-stretch pb-8 bottom-0">
       <div className="flex flex-col lg:flex-row gap-4 justify-between py-8 px-16">
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl">Eduhub</h2>

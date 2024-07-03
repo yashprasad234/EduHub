@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuMode, setMenuMode] = useState(false);
@@ -10,35 +10,37 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 pt-4">
         <div className="flex justify-between">
           <img src="" alt="" />
-          <h4 className="text-3xl">EduHub</h4>
+          <h3 className="text-3xl cursor-pointer" onClick={() => navigate("/")}>
+            EduHub
+          </h3>
         </div>
         <div className="hidden lg:block">
-          <ul className="flex mx-2 gap-8 py-2">
-            <li
-              className="cursor-pointer border-b border-slate-800 border-double"
-              onClick={() => {
-                navigate("/signup");
-              }}
+          <div className="flex mx-2 gap-8 py-2">
+            <NavLink
+              to={"/signup"}
+              className={({ isActive }) =>
+                isActive ? "border-b border-double border-slate-800" : ""
+              }
             >
               Signup
-            </li>
-            <li
-              className="cursor-pointer border-b border-slate-800 border-double"
-              onClick={() => {
-                navigate("/signin");
-              }}
+            </NavLink>
+            <NavLink
+              to={"/signin"}
+              className={({ isActive }) =>
+                isActive ? "border-b border-double border-slate-800" : ""
+              }
             >
               Signin
-            </li>
-            <li
-              className="cursor-pointer border-b border-slate-800 border-double"
-              onClick={() => {
-                navigate("/courses");
-              }}
+            </NavLink>
+            <NavLink
+              to={"/courses"}
+              className={({ isActive }) =>
+                isActive ? "border-b border-double border-slate-800" : ""
+              }
             >
               Courses
-            </li>
-          </ul>
+            </NavLink>
+          </div>
         </div>
         <div className="flex justify-between gap-5 lg:hidden">
           <button
@@ -81,32 +83,32 @@ export default function Navbar() {
       </div>
       {menuMode ? (
         <div>
-          <ul className="flex flex-col items-start mx-6 gap-2.5 py-2">
-            <li
-              className="cursor-pointer border-b border-slate-800 border-double"
-              onClick={() => {
-                navigate("/signup");
-              }}
+          <div className="flex flex-col items-start mx-6 gap-2.5 py-2">
+            <NavLink
+              to={"/signup"}
+              className={({ isActive }) =>
+                isActive ? "border-b border-double border-slate-800" : ""
+              }
             >
               Signup
-            </li>
-            <li
-              className="cursor-pointer border-b border-slate-800 border-double"
-              onClick={() => {
-                navigate("/signin");
-              }}
+            </NavLink>
+            <NavLink
+              to={"/signin"}
+              className={({ isActive }) =>
+                isActive ? "border-b border-double border-slate-800" : ""
+              }
             >
               Signin
-            </li>
-            <li
-              className="cursor-pointer border-b border-slate-800 border-double"
-              onClick={() => {
-                navigate("/courses");
-              }}
+            </NavLink>
+            <NavLink
+              to={"/courses"}
+              className={({ isActive }) =>
+                isActive ? "border-b border-double border-slate-800" : ""
+              }
             >
               Courses
-            </li>
-          </ul>
+            </NavLink>
+          </div>
         </div>
       ) : null}
     </div>
