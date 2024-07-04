@@ -5,7 +5,7 @@ export default function Landing() {
 
   return (
     // <div className="container p-6">
-    <div className="grid grid-cols-12 gap-3 p-6">
+    <div className="grid grid-cols-12 gap-3 py-8 px-16">
       <div className="col-span-12 lg:col-span-6">
         <div>
           <div>

@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useSetRecoilState } from "recoil";
 import axios from "axios";
+import userState from "../../store/atoms/userState";
 
 export default function Signin() {
   const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URI;
@@ -9,6 +11,7 @@ export default function Signin() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const setUser = useSetRecoilState(userState);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,10 +23,14 @@ export default function Signin() {
           password,
         },
       });
-      console.log(res.data.token);
+      // console.log(res.data.token);
       localStorage.setItem("user-token", res.data.token);
-      console.log(res.data.msg);
+      // console.log(res.data.msg);
       navigate("/courses");
+      setUser({
+        isLoading: false,
+        user: email,
+      });
     } catch (err) {
       console.log(err);
     }
