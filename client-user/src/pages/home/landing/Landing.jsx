@@ -17,22 +17,22 @@ export default function Landing() {
               career and join our growth-focused community.
             </div>
           </div>
-          <div className="w-3/5 flex justify-between mt-6">
+          <div className="w-3/5 flex gap-4 justify-between mt-6">
             <button
-              className="w-2/5 p-3 border-2 border-slate-800 rounded-lg text-sm hover:bg-slate-800 hover:text-yellow-50"
+              className="w-3/5 p-3 border-2 border-slate-800 text-sm hover:bg-slate-800 hover:text-yellow-50"
               onClick={() => {
                 navigate("/signup");
               }}
             >
-              Signup
+              BECOME A STUDENT
             </button>
             <button
-              className="w-2/5 p-3 border-2 border-slate-800 rounded-lg text-sm hover:bg-slate-800 hover:text-yellow-50"
+              className="w-3/5 p-3 border-2 border-slate-800 text-sm hover:bg-slate-800 hover:text-yellow-50"
               onClick={() => {
-                navigate("/login");
+                window.location = "http://localhost:5174";
               }}
             >
-              Signin
+              BECOME AN EDUCATOR
             </button>
           </div>
         </div>
