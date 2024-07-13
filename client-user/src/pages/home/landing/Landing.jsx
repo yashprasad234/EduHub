@@ -32,7 +32,7 @@ export default function Landing() {
       <div className="col-span-1"></div>
       <div className="col-span-12 lg:col-span-5 w-full h-full">
         <img
-          src="./images/eduhub-landing-img.png"
+          src="../../../../images/eduhub-landing-img.png"
           className="my-5 h-96 aspect-video object-cover hidden lg:block"
         />
       </div>
