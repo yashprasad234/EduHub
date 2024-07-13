@@ -107,9 +107,9 @@ export default function Testimonial() {
         testimony={testimonies[current].testimony}
       />
 
-      <div className="flex gap-32">
+      <div className="flex gap-32 justify-around mt-2">
         <button
-          className="bg-white rounded-full p-4 pointer shadow-xl"
+          className="bg-white rounded-full p-4 pointer shadow-xl border border-slate-300"
           onClick={() => {
             setCurrent((prev) =>
               prev > 0 ? prev - 1 : testimonies.length - 1
@@ -133,7 +133,7 @@ export default function Testimonial() {
         </button>
 
         <button
-          className="bg-white rounded-full p-4 pointer shadow-xl"
+          className="bg-white rounded-full p-4 pointer shadow-xl border border-slate-300"
           onClick={() => {
             setCurrent((prev) =>
               prev < testimonies.length - 1 ? prev + 1 : 0
