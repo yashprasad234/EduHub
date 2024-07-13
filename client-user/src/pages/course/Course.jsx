@@ -57,10 +57,10 @@ export default function Course() {
   };
 
   return (
-    <div className="h-min lg:h-screen">
+    <div className="h-min lg:h-screen ">
       {course ? (
         <div className="w-full lg:h-96 bg-slate-700 px-8 py-12 relative flex flex-col lg:block">
-          <div className="flex flex-col gap-4 ml-16 w-3/4 justify-center lg:w-1/2 mr-8 text-white">
+          <div className="flex flex-col gap-4 ml-16 w-3/4 justify-center lg:w-1/2 mr-8 text-white self-center lg:self-stretch">
             <h1 className="text-5xl font-bold">{course.title}</h1>
             <p className="text-lg">{course.description}</p>
             <div className="flex flex-col lg:flex-row gap-8 lg:items-center">
@@ -76,20 +76,20 @@ export default function Course() {
               </p>
             </div>
           </div>
-          <div className="lg:absolute lg:w-1/4 bg-white h-96 lg:z-20 p-0.5 rounded-md flex flex-col gap-2 lg:top-32 lg:right-12 shadow-md">
+          <div className="lg:absolute lg:w-1/4 bg-white h-96 lg:z-20 p-0.5 rounded-md flex flex-col gap-2 lg:top-32 lg:right-12 shadow-md hidden lg:block">
             <img
               src={course.imgUrl}
               alt=""
               className="border border-slate-800 rounded-t-md"
             />
-            <div className="flex items-center gap-4 px-4">
+            <div className="flex items-center gap-4 px-4 mt-2">
               <p className="text-xl text-black">₹ {course.price}</p>
               <p className="text-sm line-through text-gray-600">
                 ₹ {course.price * 5}
               </p>
               <p className="text-xl text-gray-700">80% off</p>
             </div>
-            <div className="flex px-4 gap-2">
+            <div className="flex px-4 gap-2 mt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -108,7 +108,7 @@ export default function Course() {
                 <span className="font-bold">23 hours</span> left at this price!
               </p>
             </div>
-            <div className="px-4">
+            <div className="px-4 mt-4">
               <button
                 className="border w-full border-slate-800 hover:bg-slate-800 hover:text-white rounded-md py-4"
                 onClick={handleBuyCourse}
@@ -117,6 +117,12 @@ export default function Course() {
               </button>
             </div>
           </div>
+          <button
+            className="w-5/6 bg-white rounded-md py-4 block lg:hidden self-center mt-4"
+            onClick={handleBuyCourse}
+          >
+            BUY NOW
+          </button>
         </div>
       ) : null}
     </div>
