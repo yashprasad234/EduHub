@@ -18,7 +18,7 @@ export default function CourseCard({ icon, course, buy }) {
             <p className="text-sm">{course.description}</p>
           </div>
           {course.imgURL && (
-            <div className="w-2/4">
+            <div className="w-2/4 hidden md:block">
               <img
                 src={course.imgURL}
                 className="w-fit h-fit rounded-md border border-slate-600"
@@ -27,7 +27,7 @@ export default function CourseCard({ icon, course, buy }) {
           )}
         </div>
         <div className="flex flex-col md:flex-row justify-around gap-4">
-          <div className="flex flex-col md:flex-row gap-4 my-auto">
+          <div className="flex flex-col items-center md:items-stretch md:flex-row gap-4 my-auto">
             <div className="flex items-center gap-3">
               <div>
                 <svg

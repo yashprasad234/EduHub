@@ -98,7 +98,7 @@ export default function Testimonial() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div className="flex flex-col gap-4 justify-center items-center w-1/2 self-center">
+    <div className="flex flex-col gap-4 justify-center items-center w-1/2 self-center hidden md:block">
       <TestimonialCard
         img={testimonies[current].img}
         author={testimonies[current].author}

@@ -26,25 +26,16 @@ export default function Landing() {
             >
               BECOME A STUDENT
             </button>
-            <button
-              className="w-3/5 p-3 border-2 border-slate-800 text-sm hover:bg-slate-800 hover:text-yellow-50"
-              onClick={() => {
-                window.location = "http://localhost:5174";
-              }}
-            >
-              BECOME AN EDUCATOR
-            </button>
           </div>
         </div>
       </div>
-      <div className="col-span-2"></div>
-      <div className="col-span-12 lg:col-span-4 w-full h-full">
+      <div className="col-span-1"></div>
+      <div className="col-span-12 lg:col-span-5 w-full h-full">
         <img
-          src="https://app.rigi.club/wp-content/uploads/2022/09/How-create-and-sell-online-courses-for-free.png"
-          className="my-5 h-full aspect-video rounded-3xl object-cover"
+          src="./images/eduhub-landing-img.png"
+          className="my-5 h-96 aspect-video object-cover hidden lg:block"
         />
       </div>
     </div>
-    // </div>
   );
 }

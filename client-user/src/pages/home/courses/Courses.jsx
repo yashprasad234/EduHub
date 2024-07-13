@@ -10,7 +10,8 @@ const courses = [
     instructor: "John Doe",
     duration: 20,
     price: 99.99,
-    imgURL: "https://picsum.photos/600/400",
+    imgURL:
+      "https://www.learnfly.com/img/post_img/1335475250_1_5ev1xmjs2-sj4ddejfdnqa.png",
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const courses = [
     instructor: "Jane Smith",
     duration: 30,
     price: 149.99,
-    imgURL: "https://picsum.photos/600/400",
+    imgURL:
+      "https://skillxprss.com/wp-content/uploads/2021/12/Advanced-Python-batch-01-website.jpg",
   },
   {
     id: 3,
@@ -30,7 +32,7 @@ const courses = [
     instructor: "Emily Johnson",
     duration: 60,
     price: 299.99,
-    imgURL: "https://picsum.photos/600/400",
+    imgURL: "https://img-c.udemycdn.com/course/750x422/548278_b005_9.jpg",
   },
 ];
 
