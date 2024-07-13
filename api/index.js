@@ -16,7 +16,7 @@ app.use("/api/admin", adminRouter);
 app.use("/api/user", userRouter);
 
 mongoose.connect(MONGO_URI, {
-  dbName: "coursera-clone",
+  dbName: "eduhub",
 });
 
 app.get("/", (req, res) => {

@@ -5,7 +5,7 @@ const SECRET = process.env.AUTH_SECRET;
 const Admin = require("../models/Admin.js");
 const Course = require("../models/Course.js");
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 const router = express.Router();
@@ -14,6 +14,16 @@ app.use(express.json());
 
 router.get("/", (req, res) => {
   res.json({ msg: "Hello duniya from admin" });
+});
+
+// authenticate an admind
+
+router.get("/me", authenticateJwt, async (req, res) => {
+  const admin = await Admin.findById(req.user.userId);
+  if (!admin) {
+    res.status(403).json({ msg: "Admin not found" });
+  }
+  res.json({ adminEmail: admin.email });
 });
 
 // register an admin
@@ -41,12 +51,15 @@ router.post("/login", async (req, res) => {
   const admin = await Admin.findOne({
     email: req.headers.email,
   });
-  const validPassword = await bcrypt.compare(req.headers.password, admin.password);
+  const validPassword = await bcrypt.compare(
+    req.headers.password,
+    admin.password
+  );
   if (admin && validPassword) {
-    const token = jwt.sign({ userId: admin._id, role: "admin" }, SECRET);
+    const token = jwt.sign({ adminId: admin._id, role: "admin" }, SECRET);
     res.json({ msg: "Logged in successfully", token });
   } else {
-    res.status(404).json({ msg: "Incorrect username or password" });
+    res.status(404).json({ msg: "Incorrect adminname or password" });
   }
 });
 
@@ -56,18 +69,18 @@ router.post("/courses", authenticateJwt, async (req, res) => {
   const currentAdminId = jwt.verify(
     req.headers.authorization.split(" ")[1],
     SECRET,
-    (err, user) => {
+    (err, admin) => {
       if (err) return;
-      return user.userId;
+      return admin.adminId;
     }
   );
   const currentAdmin = await Admin.findById(currentAdminId);
   if (currentAdmin) {
-    const course = new Course({ ...req.body, instructor: currentAdmin._id });
+    const course = new Course({ ...req.body, instructor: currentAdmin.name });
     await course.save();
     res.json({ msg: "course create successfully" });
   } else {
-    res.status(403).json({ msg: "Failed to fetch the user" });
+    res.status(403).json({ msg: "Failed to fetch the admin" });
   }
 });
 
@@ -77,9 +90,9 @@ router.get("/courses", authenticateJwt, async (req, res) => {
   const currentAdminId = jwt.verify(
     req.headers.authorization.split(" ")[1],
     SECRET,
-    (err, user) => {
+    (err, admin) => {
       if (err) return;
-      return user.userId;
+      return admin.adminId;
     }
   );
   const courses = await Course.find({ instructor: currentAdminId });
@@ -92,9 +105,9 @@ router.get("/courses/:courseId", authenticateJwt, async (req, res) => {
   const currentAdminId = jwt.verify(
     req.headers.authorization.split(" ")[1],
     SECRET,
-    (err, user) => {
+    (err, admin) => {
       if (err) return;
-      return user.userId;
+      return admin.adminId;
     }
   );
   const course = await Course.findOne({
@@ -110,9 +123,9 @@ router.put("/courses/:courseId", authenticateJwt, async (req, res) => {
   const currentAdminId = jwt.verify(
     req.headers.authorization.split(" ")[1],
     SECRET,
-    (err, user) => {
+    (err, admin) => {
       if (err) return;
-      return user.userId;
+      return admin.adminId;
     }
   );
   const course = await Course.findById(req.params.courseId);
@@ -134,9 +147,9 @@ router.delete("/courses/:courseId", authenticateJwt, async (req, res) => {
   const currentAdminId = jwt.verify(
     req.headers.authorization.split(" ")[1],
     SECRET,
-    (err, user) => {
+    (err, admin) => {
       if (err) return;
-      return user.userId;
+      return admin.adminId;
     }
   );
   const course = await Course.findById(req.params.courseId);

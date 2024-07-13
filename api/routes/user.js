@@ -16,6 +16,15 @@ router.get("/", (req, res) => {
   res.json({ msg: "Hello duniya from User" });
 });
 
+// authenticate a user
+router.get("/me", authenticateJwt, async (req, res) => {
+  const user = await User.findById(req.user.userId);
+  if (!user) {
+    res.status(403).json({ msg: "User not found" });
+  }
+  res.json({ userEmail: user.email });
+});
+
 // register a user
 
 router.post("/register", async (req, res) => {
@@ -26,7 +35,6 @@ router.post("/register", async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     const newUser = new User({
-      name: req.body.name,
       email: req.body.email,
       password: hashedPassword,
     });
