@@ -9,7 +9,7 @@ const courses = [
       "Learn the basics of JavaScript, the most popular programming language for web development. This course covers variables, functions, and basic DOM manipulation to build interactive websites. Perfect for beginners looking to start their coding journey.",
     instructor: "John Doe",
     duration: 20,
-    price: 99.99,
+    price: 999,
     imgURL:
       "https://www.learnfly.com/img/post_img/1335475250_1_5ev1xmjs2-sj4ddejfdnqa.png",
   },
@@ -20,7 +20,7 @@ const courses = [
       "Deep dive into advanced concepts of Python programming including OOP, decorators, and generators. This course is designed for those who have basic knowledge of Python and want to explore more complex topics and applications.",
     instructor: "Jane Smith",
     duration: 30,
-    price: 149.99,
+    price: 1499,
     imgURL:
       "https://skillxprss.com/wp-content/uploads/2021/12/Advanced-Python-batch-01-website.jpg",
   },
@@ -31,7 +31,7 @@ const courses = [
       "A comprehensive bootcamp covering HTML, CSS, JavaScript, and React. Build modern web applications from scratch, and learn essential skills for front-end and back-end development. Ideal for aspiring full-stack developers.",
     instructor: "Emily Johnson",
     duration: 60,
-    price: 299.99,
+    price: 2999,
     imgURL: "https://img-c.udemycdn.com/course/750x422/548278_b005_9.jpg",
   },
 ];

@@ -75,12 +75,18 @@ export default function Signin() {
               className="bg-inherit border border-slate-700 h-12 p-4"
             />
           </div>
-          <button
-            type="submit"
-            className="border border-slate-700 bg-inherit px-4 py-2 hover:bg-slate-800 hover:text-yellow-50"
-          >
-            SIGNIN
-          </button>
+          <div className="flex justify-between">
+            <button
+              type="submit"
+              className="border border-slate-700 bg-inherit px-4 py-2 hover:bg-slate-800 hover:text-yellow-50"
+            >
+              SIGNIN
+            </button>
+            <div className="text-right">
+              <p className="text-sm">test email: testuser@email.com</p>
+              <p className="text-sm">test password: testuser123</p>
+            </div>
+          </div>
         </form>
         <hr className="w-full border border-slate-700 mt-8 mb-8" />
         <div className="flex justify-between items-center">
