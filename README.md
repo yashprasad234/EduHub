@@ -1,4 +1,4 @@
-## eBootcamp
+## EduHub
 
 To run this project locally, follow the steps below:-
 
@@ -21,7 +21,7 @@ To run this project locally, follow the steps below:-
 - Now do `echo "VITE_APP_BACKEND_URI=http://localhost:3000/" >> .env` this will create your .env file with necessary environment variables
 - Now do `npm run dev` this will start your admin-frontend on http://localhost:5174"
 
-# To start the admin-frontend
+# To start the user-frontend
 
 - From the same directory do `cd ../client-user`
 - Install all the required dependencies using `npm install`
